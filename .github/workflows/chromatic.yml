@@ -3,12 +3,13 @@ name: 'Chromatic Deployment'
 on: push
 
 jobs: 
-	test:
+	chromatic-deployment:
 		runs-on: ubuntu-latest
 		steps: 
-			-uses
-			-run: npm
+			-uses: actions/checkout@v1
+			-name: Install dependencies
+			-run: yarn
 			-uses: chromaui/action@v1
 			with:
 				projectToken: ${{secrets.168e75b9cbd9}}
-				token: ${{secrets/GITHUB_TOKEN}}
+				token: ${{secrets/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c}}
